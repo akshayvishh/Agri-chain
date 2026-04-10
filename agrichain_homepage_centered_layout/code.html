@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AgriChain | Digital Agronomist</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Manrope:wght@700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-error-container": "#93000a",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary-container": "#ffd4c4",
+                    "inverse-primary": "#a5d0b9",
+                    "surface-tint": "#3f6653",
+                    "primary-fixed-dim": "#a5d0b9",
+                    "error": "#ba1a1a",
+                    "outline": "#717973",
+                    "inverse-on-surface": "#f3f0ed",
+                    "on-primary": "#ffffff",
+                    "secondary-fixed-dim": "#e7beae",
+                    "on-secondary-fixed": "#2c160c",
+                    "on-tertiary-fixed-variant": "#623f18",
+                    "background": "#fcf9f6",
+                    "primary-fixed": "#c1ecd4",
+                    "tertiary": "#3b1f00",
+                    "primary": "#012d1d",
+                    "on-surface": "#1c1c1a",
+                    "surface-dim": "#dcd9d7",
+                    "outline-variant": "#c1c8c2",
+                    "secondary": "#77574b",
+                    "surface-variant": "#e5e2df",
+                    "surface-container": "#f0edea",
+                    "surface-container-high": "#eae8e5",
+                    "on-surface-variant": "#414844",
+                    "on-tertiary": "#ffffff",
+                    "on-tertiary-fixed": "#2c1600",
+                    "surface-container-highest": "#e5e2df",
+                    "surface-bright": "#fcf9f6",
+                    "tertiary-container": "#56340e",
+                    "tertiary-fixed": "#ffdcbd",
+                    "on-primary-fixed": "#002114",
+                    "on-tertiary-container": "#cd9d6d",
+                    "on-secondary": "#ffffff",
+                    "on-primary-container": "#86af99",
+                    "error-container": "#ffdad6",
+                    "on-background": "#1c1c1a",
+                    "on-secondary-fixed-variant": "#5d4034",
+                    "surface-container-low": "#f6f3f0",
+                    "surface": "#fcf9f6",
+                    "on-primary-fixed-variant": "#274e3d",
+                    "on-error": "#ffffff",
+                    "on-secondary-container": "#7a594d",
+                    "tertiary-fixed-dim": "#f0bd8b",
+                    "secondary-fixed": "#ffdbce",
+                    "primary-container": "#1b4332",
+                    "inverse-surface": "#31302f"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "1.5rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3 { font-family: 'Manrope', sans-serif; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface"><!-- TopNavBar -->
+<header class="bg-[#fcf9f6]/80 dark:bg-[#012d1d]/80 backdrop-blur-xl docked full-width top-0 sticky z-50 shadow-sm dark:shadow-none">
+<nav class="flex justify-between items-center w-full px-6 py-4 max-w-screen-2xl mx-auto">
+<div class="text-2xl font-black text-[#012d1d] dark:text-[#fcf9f6] tracking-tighter">AgriChain</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-[#012d1d] dark:text-white border-b-2 border-[#1B4332] font-manrope tracking-tight font-bold py-1" href="#">Home</a>
+<a class="text-[#1B4332]/70 dark:text-[#fcf9f6]/70 font-manrope tracking-tight font-bold hover:bg-[#1B4332]/5 transition-colors px-3 py-1 rounded-lg" href="#">Language</a>
+<a class="text-[#1B4332]/70 dark:text-[#fcf9f6]/70 font-manrope tracking-tight font-bold hover:bg-[#1B4332]/5 transition-colors px-3 py-1 rounded-lg" href="#">Support</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-[#012d1d] dark:text-[#fcf9f6] p-2 hover:bg-[#1B4332]/5 rounded-full transition-colors" data-icon="language">language</button>
+<button class="material-symbols-outlined text-[#012d1d] dark:text-[#fcf9f6] p-2 hover:bg-[#1B4332]/5 rounded-full transition-colors" data-icon="notifications">notifications</button>
+<button class="material-symbols-outlined text-[#012d1d] dark:text-[#fcf9f6] p-2 hover:bg-[#1B4332]/5 rounded-full transition-colors" data-icon="account_circle">account_circle</button>
+</div>
+</nav>
+</header>
+<!-- Hero Section -->
+<main>
+<section class="relative min-h-[870px] flex items-center overflow-hidden bg-primary px-6 py-20">
+<div class="absolute inset-0 opacity-40 mix-blend-overlay">
+<img alt="" class="w-full h-full object-cover" data-alt="Wide angle shot of a modern sustainable farm at sunrise, lush green rows of crops under a golden misty sky, highly detailed editorial style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1KvoICcwZq2J84K4N3oo97uTr4RDDe4BRW5-cfejgfuRxmtm0re62HskcNSPPOKmMy9S7C4cvUigZYYehGDCHs2UufyP8PnsoR7cXVbWyvfVuJql9w9VSLCcB9Tun2b7sudexG8FMG__X9ic53gn2TaLYKMsXcmbF2Z-nbMsLrsOFGkie1lcWmxo4Gxu7yxz2dNWqtLVS5_jsCCEyn2Nks_bpBZwP9Vyc9FvM_d3CMzEvrWS6Rxq8OT_E-PHc4JNGrna5Lzgs6CI2"/>
+</div>
+<div class="relative z-10 max-w-screen-xl mx-auto grid grid-cols-1 gap-12 items-center">
+<div class="space-y-8 text-center">
+<h1 class="text-5xl md:text-7xl font-extrabold text-surface leading-[1.1] tracking-tighter text-center">
+                        Empowering Rural <span class="text-primary-fixed-dim">Prosperity</span> through Tech.
+                    </h1>
+<p class="text-xl text-surface/80 max-w-lg leading-relaxed font-medium text-center mx-auto">
+                        AgriChain connects farmers directly to global markets with blockchain transparency, ensuring fair value and sustainable growth for every harvest.
+                    </p>
+<div class="flex flex-wrap gap-4 justify-center">
+<button class="px-8 py-4 bg-surface text-primary font-bold rounded-xl text-lg hover:bg-surface-variant transition-all active:scale-95">Get Started</button>
+<button class="px-8 py-4 bg-primary-container text-surface border border-surface/20 font-bold rounded-xl text-lg hover:bg-primary-container/80 transition-all active:scale-95">Watch Our Story</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Role Selectors (Bento Grid) -->
+<section class="max-w-screen-2xl mx-auto px-6 -mt-24 relative z-20">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Farmer Role -->
+<div class="bg-surface-container-lowest p-10 rounded-xl shadow-xl hover:shadow-2xl transition-all group border border-outline-variant/10">
+<div class="w-16 h-16 bg-primary-container text-primary-fixed rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl" data-icon="agriculture">agriculture</span>
+</div>
+<h3 class="text-3xl font-bold text-primary mb-4">I am a Farmer</h3>
+<p class="text-on-surface-variant mb-8 leading-relaxed">Direct access to buyers, smart weather alerts, and instant blockchain-secured payments for your crops.</p>
+<a class="inline-flex items-center gap-2 text-primary font-bold hover:gap-4 transition-all" href="#">
+                        Join the Cooperative <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+<!-- Buyer Role -->
+<div class="bg-surface-container-low p-10 rounded-xl shadow-xl hover:shadow-2xl transition-all group border border-outline-variant/10">
+<div class="w-16 h-16 bg-secondary text-secondary-fixed rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl" data-icon="shopping_basket">shopping_basket</span>
+</div>
+<h3 class="text-3xl font-bold text-primary mb-4">I am a Buyer</h3>
+<p class="text-on-surface-variant mb-8 leading-relaxed">Source high-quality produce with full traceability. No middlemen, no hidden costs, just pure quality.</p>
+<a class="inline-flex items-center gap-2 text-primary font-bold hover:gap-4 transition-all" href="#">
+                        Browse Marketplace <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+<!-- Skills Role -->
+<div class="bg-tertiary text-white p-10 rounded-xl shadow-xl hover:shadow-2xl transition-all group border border-outline-variant/10">
+<div class="w-16 h-16 bg-tertiary-fixed text-tertiary flex items-center justify-center rounded-2xl mb-8 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl" data-icon="school">school</span>
+</div>
+<h3 class="text-3xl font-bold mb-4">I want to Learn</h3>
+<p class="text-white/70 mb-8 leading-relaxed">Master modern sustainable farming techniques and digital commerce through our verified agronomy courses.</p>
+<a class="inline-flex items-center gap-2 text-tertiary-fixed font-bold hover:gap-4 transition-all" href="#">
+                        Explore Hub <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</div>
+</section>
+<!-- Benefits Section (Editorial Layout) -->
+<section class="max-w-screen-2xl mx-auto px-6 py-32">
+<div class="flex flex-col md:flex-row items-end justify-between mb-20 gap-8">
+<div class="max-w-2xl">
+<span class="text-primary font-bold tracking-widest uppercase text-sm mb-4 block">The AgriChain Difference</span>
+<h2 class="text-4xl md:text-6xl font-black text-primary leading-tight tracking-tighter">Radical Transparency. Community Driven.</h2>
+</div>
+<div class="max-w-sm">
+<p class="text-on-surface-variant text-lg">We use technology to shorten the distance between the soil and the table, returning power to the producers.</p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+<!-- Benefit 1 -->
+<div class="bg-surface-container p-8 rounded-xl space-y-6">
+<span class="material-symbols-outlined text-primary text-4xl" data-icon="verified_user">verified_user</span>
+<h4 class="text-2xl font-bold text-primary">Fair Pricing</h4>
+<p class="text-on-surface-variant">Our blockchain ledger ensures that farmers receive the full market value without exploitative middleman fees.</p>
+</div>
+<!-- Benefit 2 -->
+<div class="bg-surface-container-high p-8 rounded-xl space-y-6 lg:mt-12">
+<span class="material-symbols-outlined text-primary text-4xl" data-icon="hub">hub</span>
+<h4 class="text-2xl font-bold text-primary">Traceability</h4>
+<p class="text-on-surface-variant">Every crop batch is tagged and tracked. Buyers know exactly where their food was grown and by whom.</p>
+</div>
+<!-- Benefit 3 -->
+<div class="bg-surface-container p-8 rounded-xl space-y-6">
+<span class="material-symbols-outlined text-primary text-4xl" data-icon="groups">groups</span>
+<h4 class="text-2xl font-bold text-primary">Community</h4>
+<p class="text-on-surface-variant">Access local cooperatives to share resources, machinery, and logistical support through our digital hub.</p>
+</div>
+<!-- Benefit 4 -->
+<div class="bg-surface-container-high p-8 rounded-xl space-y-6 lg:mt-12">
+<span class="material-symbols-outlined text-primary text-4xl" data-icon="eco">eco</span>
+<h4 class="text-2xl font-bold text-primary">Sustainability</h4>
+<p class="text-on-surface-variant">Promoting regenerative agriculture methods that preserve the soil for the next generation of rural livelihoods.</p>
+</div>
+</div>
+</section>
+<!-- Image Callout Section -->
+<section class="max-w-screen-2xl mx-auto px-6 pb-32">
+<div class="rounded-[40px] overflow-hidden relative h-[500px]">
+<img alt="" class="w-full h-full object-cover" data-alt="A group of diverse small-scale farmers laughing and collaborating in a vibrant field, professional portrait lighting, rural tech aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDimqV70uEeB9w74Ne8lRA0MlD1tmTm87GpCe8j9UdsI82WbKs0u069H9XXTiKSRz7BT3u_7hxXAPel8r7g8p23H_xhsdm7lRtJvuGEIBq1bAF4pYC5I0on3RENahS2vZo54l0ESEFusuXoSNN23zbk5R8Y4LnRqRhTmV_dbiBcmuQn6KRmZp9aqg0TANBaWlFwZp-Z01ej5jJyPl9sNl-Dkkmk76koVt_86XPn_Suazw-lijaGyokHC6Q2VJ3LkKiY9mw1OfX-oGZ3"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent flex items-end p-12">
+<div class="max-w-xl">
+<h3 class="text-4xl font-bold text-white mb-4">Cultivating the Future of Food</h3>
+<p class="text-white/80 text-xl mb-6 font-medium">Join over 50,000 farmers who have already transitioned to a more profitable, digital future with AgriChain.</p>
+<button class="px-8 py-4 bg-primary-fixed text-primary font-bold rounded-xl hover:scale-105 transition-transform">Register Your Farm</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#fcf9f6] dark:bg-[#012d1d] w-full py-12 px-8 flex flex-col md:flex-row justify-between items-center gap-6 border-t-0 bg-surface-container-low-to-high-tonal-shift">
+<div class="flex flex-col gap-2">
+<span class="font-manrope font-black text-[#1B4332] text-xl">AgriChain</span>
+<p class="font-inter text-sm font-medium text-[#1B4332]/60">© 2024 AgriChain Digital Agronomist. Verified Secure.</p>
+</div>
+<div class="flex gap-8">
+<a class="font-inter text-sm font-medium text-[#1B4332]/60 hover:text-[#012d1d] transition-colors" href="#">Support</a>
+<a class="font-inter text-sm font-medium text-[#1B4332]/60 hover:text-[#012d1d] transition-colors" href="#">Privacy</a>
+<a class="font-inter text-sm font-medium text-[#1B4332]/60 hover:text-[#012d1d] transition-colors" href="#">Terms</a>
+<a class="font-inter text-sm font-medium text-[#1B4332]/60 hover:text-[#012d1d] transition-colors underline" href="#">Verified Status</a>
+</div>
+</footer>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-3 bg-white/90 dark:bg-[#012d1d]/90 backdrop-blur-lg rounded-t-[24px] shadow-[0_-8px_30px_rgb(0,0,0,0.04)] tonal-shift-bg-surface-container-low">
+<div class="flex flex-col items-center justify-center bg-[#1B4332] text-white rounded-2xl px-5 py-2 tap-highlight-transparent active:scale-90 transition-all">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-inter text-[10px] font-semibold uppercase tracking-widest mt-1">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#1B4332]/60 dark:text-[#fcf9f6]/60 px-5 py-2 tap-highlight-transparent active:scale-90 transition-all hover:bg-[#1B4332]/10">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+<span class="font-inter text-[10px] font-semibold uppercase tracking-widest mt-1">Browse</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#1B4332]/60 dark:text-[#fcf9f6]/60 px-5 py-2 tap-highlight-transparent active:scale-90 transition-all hover:bg-[#1B4332]/10">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+<span class="font-inter text-[10px] font-semibold uppercase tracking-widest mt-1">Orders</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#1B4332]/60 dark:text-[#fcf9f6]/60 px-5 py-2 tap-highlight-transparent active:scale-90 transition-all hover:bg-[#1B4332]/10">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span class="font-inter text-[10px] font-semibold uppercase tracking-widest mt-1">Insights</span>
+</div>
+</nav></body></html>

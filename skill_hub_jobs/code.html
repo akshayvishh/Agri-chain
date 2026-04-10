@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AgriChain | Skill Hub &amp; Jobs</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-error-container": "#93000a",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-container": "#ffd4c4",
+                        "inverse-primary": "#a5d0b9",
+                        "surface-tint": "#3f6653",
+                        "primary-fixed-dim": "#a5d0b9",
+                        "error": "#ba1a1a",
+                        "outline": "#717973",
+                        "inverse-on-surface": "#f3f0ed",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed-dim": "#e7beae",
+                        "on-secondary-fixed": "#2c160c",
+                        "on-tertiary-fixed-variant": "#623f18",
+                        "background": "#fcf9f6",
+                        "primary-fixed": "#c1ecd4",
+                        "tertiary": "#3b1f00",
+                        "primary": "#012d1d",
+                        "on-surface": "#1c1c1a",
+                        "surface-dim": "#dcd9d7",
+                        "outline-variant": "#c1c8c2",
+                        "secondary": "#77574b",
+                        "surface-variant": "#e5e2df",
+                        "surface-container": "#f0edea",
+                        "surface-container-high": "#eae8e5",
+                        "on-surface-variant": "#414844",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-fixed": "#2c1600",
+                        "surface-container-highest": "#e5e2df",
+                        "surface-bright": "#fcf9f6",
+                        "tertiary-container": "#56340e",
+                        "tertiary-fixed": "#ffdcbd",
+                        "on-primary-fixed": "#002114",
+                        "on-tertiary-container": "#cd9d6d",
+                        "on-secondary": "#ffffff",
+                        "on-primary-container": "#86af99",
+                        "error-container": "#ffdad6",
+                        "on-background": "#1c1c1a",
+                        "on-secondary-fixed-variant": "#5d4034",
+                        "surface-container-low": "#f6f3f0",
+                        "surface": "#fcf9f6",
+                        "on-primary-fixed-variant": "#274e3d",
+                        "on-error": "#ffffff",
+                        "on-secondary-container": "#7a594d",
+                        "tertiary-fixed-dim": "#f0bd8b",
+                        "secondary-fixed": "#ffdbce",
+                        "primary-container": "#1b4332",
+                        "inverse-surface": "#31302f"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fcf9f6;
+        }
+        h1, h2, h3, h4 {
+            font-family: 'Manrope', sans-serif;
+        }
+    </style>
+</head>
+<body class="text-on-surface overflow-x-hidden">
+<!-- TopNavBar -->
+<header class="bg-[#fcf9f6]/80 dark:bg-[#012d1d]/80 backdrop-blur-xl text-[#012d1d] dark:text-[#fcf9f6] font-manrope tracking-tight font-bold docked full-width top-0 sticky z-50 shadow-sm dark:shadow-none no-border tonal-layering">
+<div class="flex justify-between items-center w-full px-6 py-4 max-w-screen-2xl mx-auto">
+<div class="text-2xl font-black text-[#012d1d] dark:text-[#fcf9f6] tracking-tighter">AgriChain</div>
+<nav class="hidden md:flex items-center space-x-8">
+<a class="text-[#1B4332]/60 dark:text-[#fcf9f6]/70 hover:bg-[#1B4332]/5 transition-colors px-3 py-2 rounded-lg" href="#">Language</a>
+<a class="text-[#1B4332]/60 dark:text-[#fcf9f6]/70 hover:bg-[#1B4332]/5 transition-colors px-3 py-2 rounded-lg" href="#">Support</a>
+<div class="flex items-center space-x-4 ml-4">
+<button class="material-symbols-outlined hover:bg-[#1B4332]/5 p-2 rounded-full transition-all active:scale-95">language</button>
+<button class="material-symbols-outlined hover:bg-[#1B4332]/5 p-2 rounded-full transition-all active:scale-95">notifications</button>
+<button class="material-symbols-outlined hover:bg-[#1B4332]/5 p-2 rounded-full transition-all active:scale-95">account_circle</button>
+</div>
+</nav>
+<button class="md:hidden material-symbols-outlined">menu</button>
+</div>
+</header>
+<main class="max-w-screen-2xl mx-auto px-6 py-12 space-y-20">
+<!-- Hero Section -->
+<section class="relative rounded-xl overflow-hidden min-h-[400px] flex items-center bg-primary-container">
+<img alt="Agri-worker learning" class="absolute inset-0 w-full h-full object-cover opacity-40 mix-blend-overlay" data-alt="vibrant photo of a modern farmer using a digital tablet in a lush green field at sunrise with high precision agriculture overlays" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCufLzFWl9csA09VISr_OKxCFRD1b4lte2SlMN1laprX2l1emqidqK93vNBql94ZXKofaByOSagHapaB7sRZHS2Wj39TgRUrARoFaqLQ3E0u9ZmEnLXe_TZ1MbXVSybyTVVTtdROSKWy8tFtXBmXJmw4KjOXuQALwof7t7pGUrL9Cz6CJ_pyutEbPRVy4Em9E3xDHWGaPeeKMXev4CpCv6hyrOWXd0_I9PUI4yRG-FewO_DIxu5vS7sG-HD7RYJgs3RLVaSTP-IXjaz"/>
+<div class="relative z-10 px-8 md:px-16 max-w-3xl space-y-6">
+<h1 class="text-5xl md:text-6xl font-black text-white leading-[1.1] tracking-tighter">
+                    Empowering the Next Generation of <span class="text-primary-fixed">Agri-Experts</span>
+</h1>
+<p class="text-lg text-white/80 font-medium max-w-xl">
+                    Bridge the gap between traditional wisdom and modern precision. Find jobs, learn expert techniques, and trade services in our integrated hub.
+                </p>
+<div class="flex gap-4">
+<button class="bg-primary text-on-primary px-8 py-4 rounded-xl font-bold hover:opacity-90 transition-all flex items-center gap-2">
+                        Start Learning <span class="material-symbols-outlined">school</span>
+</button>
+<button class="bg-surface-container-low text-primary px-8 py-4 rounded-xl font-bold hover:bg-white transition-all">
+                        Browse Jobs
+                    </button>
+</div>
+</div>
+</section>
+<!-- Skill Hub Section -->
+<section class="space-y-8">
+<div class="flex justify-between items-end">
+<div>
+<h2 class="text-3xl font-extrabold tracking-tight">Skill Hub</h2>
+<p class="text-on-surface-variant font-medium">Master the field with expert-led video masterclasses.</p>
+</div>
+<button class="text-primary font-bold flex items-center gap-1 hover:underline">View All <span class="material-symbols-outlined">arrow_forward</span></button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Skill Card 1: Farming -->
+<div class="group bg-surface-container-low rounded-xl overflow-hidden hover:shadow-xl transition-all border-none">
+<div class="aspect-video relative overflow-hidden">
+<img alt="Farming Video" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="close up high quality video frame of hands planting a young sapling in rich dark soil with soft bokeh background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0r72FLBTrA9h1E5Fku4DbNnjFvmnHa9dLeEBgBdfduohQkoK481iwADW5xtcLDtQLp7K6vkKsqBmPu4AifepCFE6OUG7EPD7SD7qX-kYX6R0k3z9wr_kRv8VBdphzoCnV0S_e3Sw_2s06P5dkGDWxN99_GRZvcStVT1O38I_-tZxucIFvRoUQZnaGl5imqXJNSkrLCSOMxP1Moanb7PzYR6qWCN9BMx9-WnqMF9zTWZ2DnTXzUy7bec1KuiBIaHhjHreIbH2glTBR"/>
+<div class="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/10 transition-colors">
+<span class="material-symbols-outlined text-white text-6xl drop-shadow-lg" style="font-variation-settings: 'FILL' 1;">play_circle</span>
+</div>
+<span class="absolute bottom-4 right-4 bg-primary text-white text-xs px-3 py-1 rounded-full font-bold">12:45</span>
+</div>
+<div class="p-6 space-y-3">
+<div class="flex items-center gap-2 text-primary font-bold text-xs uppercase tracking-widest">
+<span class="material-symbols-outlined text-sm">agriculture</span> Farming Techniques
+                        </div>
+<h3 class="text-xl font-bold leading-tight">Precision Irrigation &amp; Water Conservation</h3>
+<p class="text-sm text-on-surface-variant line-clamp-2">Learn how to implement IoT-based drip systems to reduce water waste by 40%.</p>
+</div>
+</div>
+<!-- Skill Card 2: Repair -->
+<div class="group bg-surface-container-low rounded-xl overflow-hidden hover:shadow-xl transition-all border-none">
+<div class="aspect-video relative overflow-hidden">
+<img alt="Repair Video" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="technical close up of a mechanic repairing a modern tractor engine with professional tools and focused lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2cgYbXQGVhlgw4HwrNXjik4CagBfWdtSOpicYa1yGQB249NqZwpDvLwD8Jc40VWdOqzeV-b0CG4vYMd66dkhtAFOqsrhvAQLK5LUAsH8ru6wlH0R6H7q1J8sUMNgVqFYoPObYdx6dim5rys5BSPdcxzs3p5RlVN4TkOKym-EIIOwhGSmi4gbX_EDvTGfo79haUed9aFb2SNGDEWN_DPHz4LwDNI6jsa8ArEVUHHgCLRsrD7ymvjRKaorFkF2noeqy-6AeG-hQh5Nc"/>
+<div class="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/10 transition-colors">
+<span class="material-symbols-outlined text-white text-6xl drop-shadow-lg" style="font-variation-settings: 'FILL' 1;">play_circle</span>
+</div>
+<span class="absolute bottom-4 right-4 bg-primary text-white text-xs px-3 py-1 rounded-full font-bold">08:20</span>
+</div>
+<div class="p-6 space-y-3">
+<div class="flex items-center gap-2 text-secondary font-bold text-xs uppercase tracking-widest">
+<span class="material-symbols-outlined text-sm">build</span> Repair Skills
+                        </div>
+<h3 class="text-xl font-bold leading-tight">Tractor Maintenance: Tier 4 Engine Care</h3>
+<p class="text-sm text-on-surface-variant line-clamp-2">A step-by-step guide to seasonal maintenance for heavy agricultural machinery.</p>
+</div>
+</div>
+<!-- Skill Card 3: Business -->
+<div class="group bg-surface-container-low rounded-xl overflow-hidden hover:shadow-xl transition-all border-none">
+<div class="aspect-video relative overflow-hidden">
+<img alt="Business Video" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="professional workspace with a laptop displaying financial agricultural charts and a cup of coffee in warm morning light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqHIXm31NPzqnkc0kypYtmOy29QQS4JFmi38zxvTiet6RBQip2YHpSoBJLCVCZK8icM_zbZwFqRa21vwyTfUIvxRbbxRoY-Pjpn1qbw0I0_xSc-Et2I4fGR0ejsaE9RlcnKvSzjXx7EcBGc6FYIlztpke3pEeCYShf_wu9Sc9-ysWP03WelYDsTuT1K5yjlnsPAl0Xx5jzxpPWRihlU9UWY0dBgNxOTFlqdNtvL7DoreiFVdjfRbobXnkKpDTyXtCMNez5kXsohCi-"/>
+<div class="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/10 transition-colors">
+<span class="material-symbols-outlined text-white text-6xl drop-shadow-lg" style="font-variation-settings: 'FILL' 1;">play_circle</span>
+</div>
+<span class="absolute bottom-4 right-4 bg-primary text-white text-xs px-3 py-1 rounded-full font-bold">15:10</span>
+</div>
+<div class="p-6 space-y-3">
+<div class="flex items-center gap-2 text-tertiary-container font-bold text-xs uppercase tracking-widest">
+<span class="material-symbols-outlined text-sm">payments</span> Agri-Business
+                        </div>
+<h3 class="text-xl font-bold leading-tight">Supply Chain &amp; Market Access</h3>
+<p class="text-sm text-on-surface-variant line-clamp-2">Strategies for smallholders to negotiate better prices at regional logistics hubs.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Job Connection & Service Marketplace Bento -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Job Connection (8 cols) -->
+<div class="lg:col-span-8 space-y-6">
+<div class="flex justify-between items-center">
+<h2 class="text-3xl font-extrabold tracking-tight">Job Connection</h2>
+<div class="flex gap-2">
+<span class="bg-primary-fixed text-on-primary-fixed px-3 py-1 rounded-full text-xs font-bold">12 New Near You</span>
+</div>
+</div>
+<div class="space-y-4">
+<!-- Job Item 1 -->
+<div class="bg-surface-container-lowest p-6 rounded-xl flex flex-col md:flex-row justify-between items-start md:items-center gap-4 transition-all hover:bg-white hover:shadow-md">
+<div class="flex gap-4 items-center">
+<div class="w-16 h-16 bg-surface-container-high rounded-xl flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-3xl">compost</span>
+</div>
+<div>
+<h4 class="text-lg font-bold">Seasonal Harvest Supervisor</h4>
+<p class="text-on-surface-variant text-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">location_on</span> Green Valley Estates • 5km away
+                                </p>
+<div class="mt-2 flex gap-2">
+<span class="text-[10px] font-bold uppercase tracking-widest text-primary border border-primary/20 px-2 py-0.5 rounded">Full-Time</span>
+<span class="text-[10px] font-bold uppercase tracking-widest text-on-tertiary-container bg-tertiary-fixed px-2 py-0.5 rounded">$25/hr</span>
+</div>
+</div>
+</div>
+<button class="w-full md:w-auto bg-primary text-on-primary px-6 py-3 rounded-xl font-bold hover:opacity-90 active:scale-95 transition-all">Apply Now</button>
+</div>
+<!-- Job Item 2 -->
+<div class="bg-surface-container-lowest p-6 rounded-xl flex flex-col md:flex-row justify-between items-start md:items-center gap-4 transition-all hover:bg-white hover:shadow-md">
+<div class="flex gap-4 items-center">
+<div class="w-16 h-16 bg-surface-container-high rounded-xl flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-3xl">precision_manufacturing</span>
+</div>
+<div>
+<h4 class="text-lg font-bold">Drone Operator Apprentice</h4>
+<p class="text-on-surface-variant text-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">location_on</span> AgriTech Solutions • 12km away
+                                </p>
+<div class="mt-2 flex gap-2">
+<span class="text-[10px] font-bold uppercase tracking-widest text-primary border border-primary/20 px-2 py-0.5 rounded">Part-Time</span>
+<span class="text-[10px] font-bold uppercase tracking-widest text-on-tertiary-container bg-tertiary-fixed px-2 py-0.5 rounded">$18/hr</span>
+</div>
+</div>
+</div>
+<button class="w-full md:w-auto bg-primary text-on-primary px-6 py-3 rounded-xl font-bold hover:opacity-90 active:scale-95 transition-all">Apply Now</button>
+</div>
+<!-- Job Item 3 -->
+<div class="bg-surface-container-lowest p-6 rounded-xl flex flex-col md:flex-row justify-between items-start md:items-center gap-4 transition-all hover:bg-white hover:shadow-md">
+<div class="flex gap-4 items-center">
+<div class="w-16 h-16 bg-surface-container-high rounded-xl flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-3xl">science</span>
+</div>
+<div>
+<h4 class="text-lg font-bold">Soil Quality Technician</h4>
+<p class="text-on-surface-variant text-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">location_on</span> Regional Lab • 20km away
+                                </p>
+<div class="mt-2 flex gap-2">
+<span class="text-[10px] font-bold uppercase tracking-widest text-primary border border-primary/20 px-2 py-0.5 rounded">Contract</span>
+<span class="text-[10px] font-bold uppercase tracking-widest text-on-tertiary-container bg-tertiary-fixed px-2 py-0.5 rounded">$30/hr</span>
+</div>
+</div>
+</div>
+<button class="w-full md:w-auto bg-primary text-on-primary px-6 py-3 rounded-xl font-bold hover:opacity-90 active:scale-95 transition-all">Apply Now</button>
+</div>
+</div>
+</div>
+<!-- Service Marketplace (4 cols) -->
+<div class="lg:col-span-4 bg-surface-container-high rounded-xl p-8 space-y-6">
+<div>
+<h2 class="text-2xl font-extrabold tracking-tight">Marketplace</h2>
+<p class="text-sm text-on-surface-variant">Post work or offer your professional services.</p>
+</div>
+<div class="space-y-4">
+<div class="bg-white p-4 rounded-xl space-y-3">
+<div class="flex justify-between items-start">
+<div class="bg-secondary-container text-on-secondary-container px-2 py-1 rounded text-[10px] font-bold uppercase">Repairs</div>
+<span class="text-xs text-on-surface-variant">2h ago</span>
+</div>
+<h4 class="font-bold">Urgent: Pump Repair Needed</h4>
+<p class="text-xs text-on-surface-variant">Solar pump malfunction at Sector 4. Need technician before sundown.</p>
+<div class="flex justify-between items-center pt-2">
+<span class="text-primary font-bold">₹150 fixed</span>
+<button class="text-primary text-sm font-bold border border-primary/20 px-3 py-1 rounded-lg">Bid Now</button>
+</div>
+</div>
+<div class="bg-white p-4 rounded-xl space-y-3">
+<div class="flex justify-between items-start">
+<div class="bg-primary-fixed text-on-primary-fixed-variant px-2 py-1 rounded text-[10px] font-bold uppercase">Transport</div>
+<span class="text-xs text-on-surface-variant">5h ago</span>
+</div>
+<h4 class="font-bold">Grain Transport (5 Tons)</h4>
+<p class="text-xs text-on-surface-variant">Route: North Silo to Central Mill. Flatbed truck required.</p>
+<div class="flex justify-between items-center pt-2">
+<span class="text-primary font-bold">₹200 fixed</span>
+<button class="text-primary text-sm font-bold border border-primary/20 px-3 py-1 rounded-lg">Bid Now</button>
+</div>
+</div>
+</div>
+<button class="w-full bg-secondary text-on-secondary py-4 rounded-xl font-bold flex items-center justify-center gap-2 hover:opacity-90 active:scale-95 transition-all">
+<span class="material-symbols-outlined">add_circle</span> Post a Service
+                </button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#fcf9f6] dark:bg-[#012d1d] text-[#012d1d] dark:text-[#fcf9f6] font-inter text-sm font-medium full-width border-t-0 bg-surface-container-low-to-high-tonal-shift flat mt-20">
+<div class="w-full py-12 px-8 flex flex-col md:flex-row justify-between items-center gap-6 max-w-screen-2xl mx-auto">
+<div class="font-manrope font-black text-[#1B4332] text-xl">AgriChain Digital Agronomist</div>
+<div class="flex gap-8">
+<a class="text-[#1B4332]/60 hover:text-[#012d1d] dark:hover:text-white transition-colors" href="#">Support</a>
+<a class="text-[#1B4332]/60 hover:text-[#012d1d] dark:hover:text-white transition-colors" href="#">Privacy</a>
+<a class="text-[#1B4332]/60 hover:text-[#012d1d] dark:hover:text-white transition-colors" href="#">Terms</a>
+<a class="underline text-[#1B4332]" href="#">Verified Status</a>
+</div>
+<div class="text-[#1B4332]/60">© 2024 AgriChain Digital Agronomist. Verified Secure.</div>
+</div>
+</footer>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 bg-white/90 dark:bg-[#012d1d]/90 backdrop-blur-lg text-[#012d1d] dark:text-[#fcf9f6] font-inter text-[10px] font-semibold uppercase tracking-widest docked full-width bottom-0 rounded-t-[24px] tonal-shift-bg-surface-container-low shadow-[0_-8px_30px_rgb(0,0,0,0.04)] flex justify-around items-center px-4 pb-6 pt-3">
+<a class="flex flex-col items-center justify-center text-[#1B4332]/60 dark:text-[#fcf9f6]/60 px-5 py-2 tap-highlight-transparent active:scale-90 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span>Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#1B4332]/60 dark:text-[#fcf9f6]/60 px-5 py-2 tap-highlight-transparent active:scale-90 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+<span>Browse</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#1B4332]/60 dark:text-[#fcf9f6]/60 px-5 py-2 tap-highlight-transparent active:scale-90 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+<span>Orders</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-[#1B4332] text-white rounded-2xl px-5 py-2 tap-highlight-transparent active:scale-90 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="analytics" style="font-variation-settings: 'FILL' 1;">analytics</span>
+<span>Hub</span>
+</a>
+</nav>
+</body></html>

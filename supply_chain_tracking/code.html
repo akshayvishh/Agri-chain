@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-error-container": "#93000a",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-container": "#ffd4c4",
+                        "inverse-primary": "#a5d0b9",
+                        "surface-tint": "#3f6653",
+                        "primary-fixed-dim": "#a5d0b9",
+                        "error": "#ba1a1a",
+                        "outline": "#717973",
+                        "inverse-on-surface": "#f3f0ed",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed-dim": "#e7beae",
+                        "on-secondary-fixed": "#2c160c",
+                        "on-tertiary-fixed-variant": "#623f18",
+                        "background": "#fcf9f6",
+                        "primary-fixed": "#c1ecd4",
+                        "tertiary": "#3b1f00",
+                        "primary": "#012d1d",
+                        "on-surface": "#1c1c1a",
+                        "surface-dim": "#dcd9d7",
+                        "outline-variant": "#c1c8c2",
+                        "secondary": "#77574b",
+                        "surface-variant": "#e5e2df",
+                        "surface-container": "#f0edea",
+                        "surface-container-high": "#eae8e5",
+                        "on-surface-variant": "#414844",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-fixed": "#2c1600",
+                        "surface-container-highest": "#e5e2df",
+                        "surface-bright": "#fcf9f6",
+                        "tertiary-container": "#56340e",
+                        "tertiary-fixed": "#ffdcbd",
+                        "on-primary-fixed": "#002114",
+                        "on-tertiary-container": "#cd9d6d",
+                        "on-secondary": "#ffffff",
+                        "on-primary-container": "#86af99",
+                        "error-container": "#ffdad6",
+                        "on-background": "#1c1c1a",
+                        "on-secondary-fixed-variant": "#5d4034",
+                        "surface-container-low": "#f6f3f0",
+                        "surface": "#fcf9f6",
+                        "on-primary-fixed-variant": "#274e3d",
+                        "on-error": "#ffffff",
+                        "on-secondary-container": "#7a594d",
+                        "tertiary-fixed-dim": "#f0bd8b",
+                        "secondary-fixed": "#ffdbce",
+                        "primary-container": "#1b4332",
+                        "inverse-surface": "#31302f"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .pulse-soft {
+            animation: pulse-ring 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        @keyframes pulse-ring {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.6; transform: scale(1.1); }
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- TopNavBar -->
+<nav class="bg-[#fcf9f6]/80 dark:bg-[#012d1d]/80 backdrop-blur-xl text-[#012d1d] dark:text-[#fcf9f6] font-manrope tracking-tight font-bold docked full-width top-0 sticky z-50 no-border tonal-layering shadow-sm dark:shadow-none transition-colors">
+<div class="flex justify-between items-center w-full px-6 py-4 max-w-screen-2xl mx-auto">
+<div class="text-2xl font-black text-[#012d1d] dark:text-[#fcf9f6] tracking-tighter">AgriChain</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-[#1B4332]/70 dark:text-[#fcf9f6]/70 hover:bg-[#1B4332]/5 transition-colors px-3 py-1 rounded-lg" href="#">Language</a>
+<a class="text-[#1B4332]/70 dark:text-[#fcf9f6]/70 hover:bg-[#1B4332]/5 transition-colors px-3 py-1 rounded-lg" href="#">Support</a>
+<div class="flex items-center gap-4 ml-4">
+<button class="hover:bg-[#1B4332]/5 p-2 rounded-full transition-all scale-95 active:opacity-80">
+<span class="material-symbols-outlined">language</span>
+</button>
+<button class="hover:bg-[#1B4332]/5 p-2 rounded-full transition-all scale-95 active:opacity-80">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="hover:bg-[#1B4332]/5 p-2 rounded-full transition-all scale-95 active:opacity-80">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<main class="max-w-screen-xl mx-auto px-6 py-8 md:py-12">
+<!-- Header & ID Section -->
+<header class="mb-10 flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div class="space-y-2">
+<div class="flex items-center gap-3">
+<span class="bg-primary-container text-on-primary-container text-xs font-bold px-3 py-1 rounded-full tracking-widest uppercase">Batch #AC-88921</span>
+<span class="flex items-center gap-1 text-primary font-bold text-sm">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">verified</span>
+                        Blockchain Verified
+                    </span>
+</div>
+<h1 class="text-4xl md:text-5xl font-headline font-extrabold tracking-tight text-primary">Organic Arabica Bulk</h1>
+<p class="text-on-surface-variant max-w-lg leading-relaxed">Origin: Highlands Co-operative. Destination: Coastal Roastery HQ. Journey monitoring active via satellite telemetry.</p>
+</div>
+<div class="flex gap-4">
+<button class="bg-surface-container-low hover:bg-surface-container-high text-primary px-6 py-3 rounded-xl font-bold flex items-center gap-2 transition-all">
+<span class="material-symbols-outlined">description</span>
+                    View Manifest
+                </button>
+<button class="bg-primary text-on-primary px-6 py-3 rounded-xl font-bold flex items-center gap-2 transition-all shadow-lg shadow-primary/10">
+<span class="material-symbols-outlined">share</span>
+                    Share Status
+                </button>
+</div>
+</header>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Left Column: Map & Driver Details -->
+<div class="lg:col-span-5 space-y-8">
+<!-- Map Snippet -->
+<div class="aspect-[4/3] rounded-3xl overflow-hidden bg-surface-container shadow-sm relative">
+<img class="w-full h-full object-cover" data-alt="Detailed topographical map showing a cargo route through green agricultural valleys with technical GPS overlay markers" data-location="Kenya Highlands" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD85Lo6hUCIA6Q13C5gzUabtIXOXKaHnabqgdrlE9M_77rf9BAtQVbF04IQT4eNeN02WF5ddKi-7FTA31UotneClsYY9A6WwqsbnqtvKTGwM1xoqxO29QdB3uoSiNr8Gn0wy4VwZr2jLqFOzC_o-HBMC3u1J1NWkxTWi6yzHnVd0sxsUpt59N2U252cBI4fOJJ6ugGmn1kLmjXNX9wuxKL1VE-AdTWTf2MjloBOPsGdOlA9eH2X8mJnRbxpO5ETtXBfPec9tfbcPm5o"/>
+<!-- Glass Floating Overlay -->
+<div class="absolute bottom-6 left-6 right-6 p-4 rounded-2xl bg-white/70 backdrop-blur-md border border-white/20 flex items-center justify-between">
+<div>
+<p class="text-[10px] font-bold uppercase tracking-widest text-primary/60">Current Coordinates</p>
+<p class="font-headline font-bold text-primary">1.2921° S, 36.8219° E</p>
+</div>
+<div class="h-10 w-10 bg-primary rounded-full flex items-center justify-center text-white">
+<span class="material-symbols-outlined">navigation</span>
+</div>
+</div>
+</div>
+<!-- Driver Contact -->
+<div class="bg-surface-container-lowest p-6 rounded-3xl shadow-sm space-y-6">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="h-14 w-14 rounded-full bg-surface-variant overflow-hidden">
+<img class="h-full w-full object-cover" data-alt="Professional portrait of a middle-aged male truck driver in a clean utility jacket smiling warmly outdoors" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQIwWqM8LbqXBfM0BM6etZP2lF5nrnWFsci96O4uVUXplku6Xjor3Q_9tFeICcHOeCtsZqathYZO5rXPgaID7bIg8g36f6foxeGMPNJqkiO0gT66hilLXNt2wNKhDejwpZYUSjkhw7VriycSkb-wvGNK6kN1wFauOq7xwYfwvcseFYoR6o9n3ROwsDxFbX67xKCvTa6QrmBKtUAkWi-K6qlzOyIN3Bb67qE7Tod3XeChHaDUZUjBmihIv-bezJ_ZyfwoLhnWa7w_N8"/>
+</div>
+<div>
+<h3 class="font-headline font-bold text-lg text-primary">Samuel Mwangi</h3>
+<p class="text-sm text-on-surface-variant">Logistics Specialist · 12yr exp</p>
+</div>
+</div>
+<div class="flex gap-2">
+<button class="h-10 w-10 rounded-full bg-primary-fixed text-on-primary-fixed flex items-center justify-center hover:opacity-80 transition-opacity">
+<span class="material-symbols-outlined text-lg">call</span>
+</button>
+<button class="h-10 w-10 rounded-full bg-primary-fixed text-on-primary-fixed flex items-center justify-center hover:opacity-80 transition-opacity">
+<span class="material-symbols-outlined text-lg">chat_bubble</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4 pt-4">
+<div class="p-4 bg-surface-container-low rounded-2xl">
+<p class="text-[10px] font-bold uppercase tracking-widest text-primary/50 mb-1">Vehicle</p>
+<p class="font-headline font-bold text-sm">Volvo FH16 (Electric)</p>
+</div>
+<div class="p-4 bg-surface-container-low rounded-2xl">
+<p class="text-[10px] font-bold uppercase tracking-widest text-primary/50 mb-1">Plate</p>
+<p class="font-headline font-bold text-sm">KCA 442X</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Visual Timeline -->
+<div class="lg:col-span-7 bg-surface-container-low rounded-[2rem] p-8 md:p-12">
+<h2 class="text-2xl font-headline font-extrabold text-primary mb-12">Journey Logistics</h2>
+<div class="relative">
+<!-- Timeline Connector -->
+<div class="absolute left-6 top-0 bottom-0 w-[2px] bg-primary-fixed-dim"></div>
+<!-- Point 1: Farmer Dispatched -->
+<div class="relative pl-16 pb-16">
+<div class="absolute left-0 top-0 h-12 w-12 rounded-full bg-primary flex items-center justify-center z-10 shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined text-white" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div class="space-y-3">
+<div class="flex items-center justify-between">
+<h3 class="text-xl font-headline font-bold text-primary">Farmer Dispatched</h3>
+<span class="text-xs font-semibold text-on-surface-variant bg-surface-container px-3 py-1 rounded-full">Oct 12 · 09:15 AM</span>
+</div>
+<div class="p-5 bg-white/60 rounded-2xl border border-outline-variant/10">
+<p class="text-sm text-on-surface leading-relaxed">Originating from <span class="font-bold">Murang’a Highland Estate</span>. Quality inspected and sealed by AgriChain field agent.</p>
+<div class="mt-4 flex items-center gap-2 text-[10px] font-bold text-primary/60 uppercase tracking-widest">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">verified</span>
+                                    Identity &amp; Quantity Verified
+                                </div>
+</div>
+</div>
+</div>
+<!-- Point 2: Local Storage Hub (ACTIVE) -->
+<div class="relative pl-16 pb-16">
+<div class="absolute left-0 top-0 h-12 w-12 rounded-full bg-primary-container flex items-center justify-center z-10 shadow-lg shadow-primary-container/20 pulse-soft">
+<span class="material-symbols-outlined text-white">warehouse</span>
+</div>
+<div class="space-y-3">
+<div class="flex items-center justify-between">
+<h3 class="text-xl font-headline font-bold text-primary">At Local Storage Hub</h3>
+<span class="text-xs font-bold text-primary bg-primary-fixed px-3 py-1 rounded-full uppercase tracking-tighter">Current Status</span>
+</div>
+<div class="p-6 bg-white rounded-[1.5rem] shadow-sm border-l-4 border-primary">
+<p class="text-sm text-on-surface leading-relaxed">Arrived at <span class="font-bold">Nairobi Central Consolidation Point</span>. Currently undergoing humidity stabilization.</p>
+<div class="mt-4 grid grid-cols-2 gap-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container">thermostat</span>
+<span class="text-sm font-semibold">18.5°C Stabilized</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container">humidity_low</span>
+<span class="text-sm font-semibold">12% Moisture</span>
+</div>
+</div>
+<div class="mt-4 pt-4 border-t border-surface-container flex items-center gap-2 text-[10px] font-bold text-primary/60 uppercase tracking-widest">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">verified</span>
+                                    Storage Conditions Verified
+                                </div>
+</div>
+</div>
+</div>
+<!-- Point 3: In Transit -->
+<div class="relative pl-16 pb-16">
+<div class="absolute left-0 top-0 h-12 w-12 rounded-full bg-surface-container-high flex items-center justify-center z-10">
+<span class="material-symbols-outlined text-outline">local_shipping</span>
+</div>
+<div class="space-y-3 opacity-60">
+<div class="flex items-center justify-between">
+<h3 class="text-xl font-headline font-bold text-primary">In Transit</h3>
+<span class="text-xs font-semibold text-on-surface-variant italic">Scheduled: Oct 14 · 06:00 AM</span>
+</div>
+<div class="p-5 bg-white/30 rounded-2xl border border-outline-variant/5">
+<p class="text-sm text-on-surface leading-relaxed">Direct freight to Mombasa Port Terminal. Estimated travel time: 8 hours via expressway.</p>
+</div>
+</div>
+</div>
+<!-- Point 4: Buyer Delivery -->
+<div class="relative pl-16">
+<div class="absolute left-0 top-0 h-12 w-12 rounded-full bg-surface-container-high flex items-center justify-center z-10">
+<span class="material-symbols-outlined text-outline">handshake</span>
+</div>
+<div class="space-y-3 opacity-60">
+<div class="flex items-center justify-between">
+<h3 class="text-xl font-headline font-bold text-primary">Buyer Delivery</h3>
+<span class="text-xs font-semibold text-on-surface-variant">Estimated: Oct 15</span>
+</div>
+<div class="p-5 bg-white/30 rounded-2xl border border-outline-variant/5">
+<p class="text-sm text-on-surface leading-relaxed">Final handover to Coastal Roastery HQ. Multi-sig blockchain confirmation required upon arrival.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-[#fcf9f6] dark:bg-[#012d1d] text-[#012d1d] dark:text-[#fcf9f6] font-inter text-sm font-medium w-full py-12 px-8 flex flex-col md:flex-row justify-between items-center gap-6 mt-12 mb-24 md:mb-0">
+<div class="font-manrope font-black text-[#1B4332] text-xl">AgriChain</div>
+<div class="flex gap-8">
+<a class="text-[#1B4332]/60 hover:text-[#012d1d] dark:hover:text-white transition-colors" href="#">Support</a>
+<a class="text-[#1B4332]/60 hover:text-[#012d1d] dark:hover:text-white transition-colors" href="#">Privacy</a>
+<a class="text-[#1B4332]/60 hover:text-[#012d1d] dark:hover:text-white transition-colors" href="#">Terms</a>
+<a class="text-[#1B4332]/60 hover:text-[#012d1d] dark:hover:text-white transition-colors underline decoration-primary-fixed" href="#">Verified Status</a>
+</div>
+<div class="text-[#1B4332]/60">© 2024 AgriChain Digital Agronomist. Verified Secure.</div>
+</footer>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-3 bg-white/90 dark:bg-[#012d1d]/90 backdrop-blur-lg shadow-[0_-8px_30px_rgb(0,0,0,0.04)] rounded-t-[24px]">
+<div class="flex flex-col items-center justify-center text-[#1B4332]/60 dark:text-[#fcf9f6]/60 px-5 py-2 tap-highlight-transparent active:scale-90 transition-all">
+<span class="material-symbols-outlined">home</span>
+<span class="font-inter text-[10px] font-semibold uppercase tracking-widest mt-1">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#1B4332]/60 dark:text-[#fcf9f6]/60 px-5 py-2 tap-highlight-transparent active:scale-90 transition-all">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="font-inter text-[10px] font-semibold uppercase tracking-widest mt-1">Products</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-[#1B4332] text-white rounded-2xl px-5 py-2 tap-highlight-transparent active:scale-90 transition-all">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">shopping_cart</span>
+<span class="font-inter text-[10px] font-semibold uppercase tracking-widest mt-1">Orders</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#1B4332]/60 dark:text-[#fcf9f6]/60 px-5 py-2 tap-highlight-transparent active:scale-90 transition-all">
+<span class="material-symbols-outlined">analytics</span>
+<span class="font-inter text-[10px] font-semibold uppercase tracking-widest mt-1">Insights</span>
+</div>
+</nav>
+</body></html>
