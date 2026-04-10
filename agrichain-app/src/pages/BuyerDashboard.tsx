@@ -1,16 +1,76 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { insforgeClient } from '../lib/insforge';
 
-const PRODUCTS = [
-  { name: "Premium Durum Wheat", location: "Heartland Estate, NE", price: "₹420", tons: "120", moisture: "11.4%", img: "https://lh3.googleusercontent.com/aida-public/AB6AXuBL49mAo3cFxz16ytucwx8diLNuWjRdgIRrCxH3jgcPC18tFPPPPRUxnYA2vPg_DCHs_nVYAFtjw-QLt4Xh1Tx82ib9eIF00yA0FBVjS6vKSEodgC1BxVzvAdXrBbxyRbeJA5i7JDRe8miFCKUnyTgWEmwLTn9GK7ZISAyggcAl9cN1ViThpoblLU7Yrb3ZEj79IHoPVnFAWzQ3dDB1nE8o64IRo98xMOp9QxIbk5GLFju2B_jbdhx_l9ABc8tAqDGgHTV_1pUYw6x1" },
-  { name: "Organic Soybeans", location: "Riverview Collective, IA", price: "₹610", tons: "45", moisture: "N/A", img: "https://lh3.googleusercontent.com/aida-public/AB6AXuCWI5uv4Cr-5_4Ji-5HMWFEUCb1L7kZKQ7aoESJcOx4CLBbRV9T3JZKEc_W7RuPu_aFa4RgchRJM3vaASTfVhxlKwZkaZRrideej6SSRkZTZt7r7ZN1PbVS5hewwUS9hN4wGziJrHkERXukN7ZesNhtmicF2PyvBpz1edN7RtUNjPJvelLpLcANZWL49weZaDGBPI-yRdUXUnIY-peYqvYtRXLm66p-MPTM-J-uDm7Ax2BiOFA3_ARZUsti5IqZRxlxMj6YpoYUK3uZ" },
-  { name: "Yellow Dent Corn", location: "Prairie Sun Farms, KS", price: "₹385", tons: "210", moisture: "14.2%", img: "https://lh3.googleusercontent.com/aida-public/AB6AXuBGSqqvgnzx9GwPKiKMzjU6OXkSIFuhXVG6BjkwLixdiq9L_N6cZHHzh2eYeqZcTJ470DnmSFeFk2MHMgVoNrWas6hK2-r8uXEChRk_avo-KADK0ceEfjBUV1JQuYn9Z8yLF-vjIVPN6yvsOrclqgv9CGqFltMeoczv7SHp8Nio4AaRS1y-_v9DqcwwAfHptLoT2gf9bSihsA1kkuOIF-aUHUModmpIcpvSAzXbVmvadg7Zx823b4QcnQQPZQDoAiNwlRUXU6VolBAM" }
+type Product = {
+  id: string;
+  name: string;
+  location: string;
+  price: string;
+  tons: string;
+  moisture: string;
+  img: string;
+};
+
+// Fallback in case table doesn't exist yet
+const INITIAL_MOCK_PRODUCTS: Product[] = [
+  { id: '1', name: "Premium Durum Wheat", location: "Heartland Estate, NE", price: "₹420", tons: "120", moisture: "11.4%", img: "https://lh3.googleusercontent.com/aida-public/AB6AXuBL49mAo3cFxz16ytucwx8diLNuWjRdgIRrCxH3jgcPC18tFPPPPRUxnYA2vPg_DCHs_nVYAFtjw-QLt4Xh1Tx82ib9eIF00yA0FBVjS6vKSEodgC1BxVzvAdXrBbxyRbeJA5i7JDRe8miFCKUnyTgWEmwLTn9GK7ZISAyggcAl9cN1ViThpoblLU7Yrb3ZEj79IHoPVnFAWzQ3dDB1nE8o64IRo98xMOp9QxIbk5GLFju2B_jbdhx_l9ABc8tAqDGgHTV_1pUYw6x1" },
+  { id: '2', name: "Organic Soybeans", location: "Riverview Collective, IA", price: "₹610", tons: "45", moisture: "N/A", img: "https://lh3.googleusercontent.com/aida-public/AB6AXuCWI5uv4Cr-5_4Ji-5HMWFEUCb1L7kZKQ7aoESJcOx4CLBbRV9T3JZKEc_W7RuPu_aFa4RgchRJM3vaASTfVhxlKwZkaZRrideej6SSRkZTZt7r7ZN1PbVS5hewwUS9hN4wGziJrHkERXukN7ZesNhtmicF2PyvBpz1edN7RtUNjPJvelLpLcANZWL49weZaDGBPI-yRdUXUnIY-peYqvYtRXLm66p-MPTM-J-uDm7Ax2BiOFA3_ARZUsti5IqZRxlxMj6YpoYUK3uZ" },
+  { id: '3', name: "Yellow Dent Corn", location: "Prairie Sun Farms, KS", price: "₹385", tons: "210", moisture: "14.2%", img: "https://lh3.googleusercontent.com/aida-public/AB6AXuBGSqqvgnzx9GwPKiKMzjU6OXkSIFuhXVG6BjkwLixdiq9L_N6cZHHzh2eYeqZcTJ470DnmSFeFk2MHMgVoNrWas6hK2-r8uXEChRk_avo-KADK0ceEfjBUV1JQuYn9Z8yLF-vjIVPN6yvsOrclqgv9CGqFltMeoczv7SHp8Nio4AaRS1y-_v9DqcwwAfHptLoT2gf9bSihsA1kkuOIF-aUHUModmpIcpvSAzXbVmvadg7Zx823b4QcnQQPZQDoAiNwlRUXU6VolBAM" }
 ];
 
 export default function BuyerDashboard() {
   const [search, setSearch] = useState('');
+  const [products, setProducts] = useState<Product[]>(INITIAL_MOCK_PRODUCTS);
 
-  const filteredProducts = PRODUCTS.filter(p => 
+  useEffect(() => {
+    // 1. Fetch initial products
+    const fetchProducts = async () => {
+      try {
+        const { data, error } = await insforgeClient.from('products').select('*');
+        if (error) {
+          console.warn("Table might not exist yet, falling back to mock data.", error);
+          return;
+        }
+        if (data && data.length > 0) {
+          setProducts(data);
+        }
+      } catch (err) {
+        console.error("Connection error:", err);
+      }
+    };
+
+    fetchProducts();
+
+    // 2. Subscribe to real-time events on 'products' table
+    let channel: any;
+    try {
+      if (typeof insforgeClient.channel === 'function') {
+        channel = insforgeClient.channel('realtime_products')
+          .on('postgres_changes', { event: '*', schema: 'public', table: 'products' }, (payload: any) => {
+            console.log("Real-time event received:", payload);
+            if (payload.eventType === 'INSERT') {
+              setProducts(prev => [...prev, payload.new as Product]);
+            } else if (payload.eventType === 'UPDATE') {
+              setProducts(prev => prev.map(p => p.id === payload.new.id ? payload.new as Product : p));
+            } else if (payload.eventType === 'DELETE') {
+              setProducts(prev => prev.filter(p => p.id !== payload.old.id));
+            }
+          })
+          .subscribe();
+      }
+    } catch(err) {
+       console.log('Realtime config ignored because table might not exist.')
+    }
+
+    return () => {
+      if (channel && typeof insforgeClient.removeChannel === 'function') {
+        insforgeClient.removeChannel(channel);
+      }
+    };
+  }, []);
+
+  const filteredProducts = products.filter(p => 
     p.name.toLowerCase().includes(search.toLowerCase()) || 
     p.location.toLowerCase().includes(search.toLowerCase())
   );
@@ -19,31 +79,40 @@ export default function BuyerDashboard() {
     <div className="bg-surface text-on-surface min-h-screen">
       <main className="max-w-screen-2xl mx-auto px-6 py-10 space-y-12">
         {/* Active Orders Track */}
-        <section className="bg-surface-container-low rounded-xl p-8">
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">
+        <section className="bg-surface-container-low rounded-xl p-6 sm:p-8">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 sm:mb-8 gap-4">
             <div>
-              <h2 className="text-3xl font-black tracking-tight text-primary">Active Orders</h2>
-              <p className="text-on-surface-variant font-medium">Real-time supply chain transparency.</p>
+              <h2 className="text-2xl sm:text-3xl font-black tracking-tight text-primary">Active Orders</h2>
+              <p className="text-sm sm:text-base text-on-surface-variant font-medium">Real-time supply chain transparency.</p>
             </div>
-            <button className="bg-primary text-on-primary px-6 py-3 rounded-xl font-bold flex items-center gap-2 hover:bg-primary/90 transition-all">
+            <button className="bg-primary text-on-primary px-6 py-3 rounded-xl font-bold flex items-center gap-2 hover:bg-primary/90 transition-all w-full sm:w-auto justify-center">
               View Logistics Map <span className="material-symbols-outlined text-sm">map</span>
             </button>
           </div>
-          <div className="bg-surface-container-lowest rounded-xl p-6 space-y-8">
+          <div className="bg-surface-container-lowest rounded-xl p-4 sm:p-6 space-y-8">
             <div className="flex flex-col gap-2">
-              <div className="flex justify-between text-sm font-bold text-primary mb-2">
+              <div className="flex flex-col sm:flex-row justify-between text-xs sm:text-sm font-bold text-primary mb-2 gap-1 sm:gap-0">
                 <span>ORDER #AC-9842 (Bulk Wheat)</span>
                 <span className="text-on-primary-container">In Transit • Expected Friday</span>
               </div>
               {/* Tracking Visualizer */}
-              <div className="relative flex justify-between items-center w-full px-4">
-                <div className="absolute top-1/2 left-0 w-full h-1 bg-surface-container-high -translate-y-1/2"></div>
-                <div className="absolute top-1/2 left-0 w-2/3 h-1 bg-primary-container -translate-y-1/2 transition-all duration-1000"></div>
-                
-                <TrackingStep icon="agriculture" label="Farm" completed />
-                <TrackingStep icon="inventory_2" label="Storage" completed />
-                <TrackingStep icon="local_shipping" label="Transit" active />
-                <TrackingStep icon="person" label="Buyer" />
+              <div className="overflow-x-auto pb-4 pt-2 -mx-4 px-4 sm:mx-0 sm:px-0">
+                <div className="relative flex justify-between items-center w-full min-w-[500px] px-2 sm:px-4">
+                  <div className="absolute top-1/2 left-0 right-0 h-1 mx-4 sm:mx-8 bg-surface-container-high -translate-y-1/2"></div>
+                  
+                  {/* Dynamic Progress Bar */}
+                  <motion.div 
+                    initial={{ width: "20%" }}
+                    animate={{ width: ["20%", "45%", "75%", "90%", "75%", "45%"] }}
+                    transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
+                    className="absolute top-1/2 left-0 h-1 mx-4 sm:mx-8 bg-primary-container -translate-y-1/2"
+                  ></motion.div>
+                  
+                  <TrackingStep icon="agriculture" label="Farm" completed />
+                  <TrackingStep icon="inventory_2" label="Storage" completed />
+                  <TrackingStep icon="local_shipping" label="Transit" active />
+                  <TrackingStep icon="person" label="Buyer" />
+                </div>
               </div>
             </div>
           </div>
@@ -69,16 +138,18 @@ export default function BuyerDashboard() {
           </div>
 
           {/* Filters */}
-          <div className="flex flex-wrap gap-4 items-center">
-            <FilterButton icon="location_on" label="Midwest" />
-            <FilterButton icon="potted_plant" label="Grains" />
-            <FilterButton icon="payments" label="₹2k - ₹10k" />
-            <button 
-              onClick={() => setSearch('')}
-              className="text-primary-container font-bold text-sm underline hover:text-primary transition-colors"
-            >
-              Clear all filters
-            </button>
+          <div className="flex overflow-x-auto pb-2 sm:pb-0 sm:flex-wrap gap-3 items-center w-full -mx-4 px-4 sm:mx-0 sm:px-0 hide-scrollbar">
+            <div className="flex gap-3 min-w-max items-center">
+              <FilterButton icon="location_on" label="Midwest" />
+              <FilterButton icon="potted_plant" label="Grains" />
+              <FilterButton icon="payments" label="₹2k - ₹10k" />
+              <button 
+                onClick={() => setSearch('')}
+                className="text-primary-container font-bold text-sm underline hover:text-primary transition-colors px-2"
+              >
+                Clear all filters
+              </button>
+            </div>
           </div>
 
           {/* Product Grid */}

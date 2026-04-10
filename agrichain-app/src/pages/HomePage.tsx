@@ -117,9 +117,9 @@ export default function HomePage() {
                 <h3 className="text-4xl md:text-6xl font-black text-white leading-tight tracking-tighter">Cultivating the Future of Food</h3>
                 <p className="text-white/80 text-lg md:text-2xl font-medium leading-relaxed">Join over 50,000 farmers who have already transitioned to a more profitable, digital future with AgriChain.</p>
                 <div className="pt-4">
-                  <button className="w-full sm:w-auto px-12 py-5 bg-primary-fixed text-primary font-black rounded-full text-xl hover:scale-110 active:scale-95 transition-all shadow-2xl">
+                  <Link to="/login" className="inline-block text-center w-full sm:w-auto px-12 py-5 bg-primary-fixed text-primary font-black rounded-full text-xl hover:scale-110 active:scale-95 transition-all shadow-2xl">
                     Register Your Farm
-                  </button>
+                  </Link>
                 </div>
               </div>
             </div>
